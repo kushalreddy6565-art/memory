@@ -1,16 +1,5 @@
 # memory
-from flask import Flask, render_template, request, jsonify
 
-app = Flask(__name__)
-
-def display_frames(frames):
-    return " ".join(str(f) if f != -1 else "-" for f in frames)
-
-def fifo(pages, f):
-    frames = [-1] * f
-    index = 0
-    faults = 0
-    result = ""
 
     for page in pages:
         if page not in frames:
